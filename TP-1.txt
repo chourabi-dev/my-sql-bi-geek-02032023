@@ -1,0 +1,11 @@
+1 - SELECT DISTINCT `Category` FROM `product` 
+2 - SELECT * FROM `product` WHERE `Price` <=2000
+3 - SELECT COUNT(*) FROM `product` WHERE `Price` > 2000
+4 - SELECT MIN(`Price`) AS `min`,MAX(`Price`) AS `max`,AVG(`Price`) AS `moy`  FROM `product` 
+5 - SELECT `PName`,`Price` FROM `product` ORDER BY `Price` DESC
+6 - SELECT COUNT(*) AS `total` FROM `product`
+7 - SELECT `PName` FROM `product` WHERE  `Price` BETWEEN 2000 AND 4000
+8 - SELECT COUNT(*) AS `total FROM `product` WHERE  `Price` BETWEEN 2000 AND 4000
+9 - SELECT * FROM `product` WHERE ( `PName` LIKE 'a%' ) OR ( `PName` LIKE 'b%') OR (`PName` LIKE 'c%')
+10 - SELECT * FROM `product` WHERE  `PName` LIKE '%lg%'
+11 - SELECT `PName`,`Price` FROM `product` ORDER BY `Price` DESC LIMIT 3

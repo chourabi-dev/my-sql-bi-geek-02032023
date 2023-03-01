@@ -91,6 +91,21 @@ SELECT COUNT(*), `name` FROM `products` WHERE `quantity` = 0
 
 
 
+Exmpl LIKE
+SELECT * FROM `products` WHERE `name` LIKE 'mac%';
+SELECT * FROM `products` WHERE `name` LIKE '%mac';
+SELECT * FROM `products` WHERE `name` LIKE '%mac%';
+SELECT COUNT(*) AS `total` FROM `products` WHERE  `name` LIKE 'a%';
+
+
+Exmpl IN
+SELECT * FROM `products` WHERE  `quantity` IN ( 0, 5... )
+
+Exmpl between
+SELECT * FROM `products` WHERE `price` BETWEEN 800 AND 2500
+
+
+
 
 
 
