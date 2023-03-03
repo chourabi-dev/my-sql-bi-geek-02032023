@@ -9,3 +9,31 @@
 9 - SELECT * FROM `product` WHERE ( `PName` LIKE 'a%' ) OR ( `PName` LIKE 'b%') OR (`PName` LIKE 'c%')
 10 - SELECT * FROM `product` WHERE  `PName` LIKE '%lg%'
 11 - SELECT `PName`,`Price` FROM `product` ORDER BY `Price` DESC LIMIT 3
+12 - 
+13 - SELECT * FROM `product`,`company` WHERE product.Manufacturer = company.id_company AND
+
+company.Country='japan' AND product.Price <= 2000
+14 - SELECT `company`.`Country` FROM `product`, `company` WHERE product.Manufacturer = company.id_company AND product.PName='sony PlayStation 2'
+15 - SELECT DISTINCT `company`.`CName` FROM `product`, `company` WHERE product.Manufacturer = company.id_company AND product.Price > 1000 AND company.Country="japan"
+16 - SELECT product.PName FROM `product`, `company` WHERE product.Manufacturer = company.id_company AND  (
+company.Country = "USA" OR company.Country = "russia"
+)
+
+* SELECT product.PName FROM `product`, `company` WHERE product.Manufacturer = company.id_company AND
+
+company.Country IN ( 'usa','russia' )
+
+17 - SELECT DISTINCT product.PName FROM `product`,`purchase` WHERE purchase.product = product.id_product AND purchase.buyer="wayne"
+18 - SELECT DISTINCT product.PName FROM `product`,`purchase`,`company` WHERE purchase.product = product.id_product AND product.Manufacturer = company.id_company AND purchase.buyer="wayne" AND company.Country="usa"
+19 - SELECT DISTINCT company.Country FROM `product`,`purchase`,`company` WHERE purchase.product = product.id_product AND product.Manufacturer = company.id_company AND purchase.buyer="wayne" 
+20 - SELECT `PName` FROM `product` WHERE `Price` = ( SELECT MAX(product.Price) FROM product,purchase WHERE purchase.product = product.id_product AND purchase.buyer = 'wayne' )
+21 - SELECT product.PName, COUNT(*) FROM `purchase`,product WHERE purchase.product = product.id_product GROUP BY product.id_product
+22 - SELECT product.PName, COUNT(*) AS `total`  FROM `purchase`,product WHERE purchase.product = product.id_product GROUP BY product.id_product ORDER BY `total` DESC LIMIT 1
+
+
+
+
+
+
+
+
