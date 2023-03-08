@@ -29,10 +29,10 @@ company.Country IN ( 'usa','russia' )
 20 - SELECT `PName` FROM `product` WHERE `Price` = ( SELECT MAX(product.Price) FROM product,purchase WHERE purchase.product = product.id_product AND purchase.buyer = 'wayne' )
 21 - SELECT product.PName, COUNT(*) FROM `purchase`,product WHERE purchase.product = product.id_product GROUP BY product.id_product
 22 - SELECT product.PName, COUNT(*) AS `total`  FROM `purchase`,product WHERE purchase.product = product.id_product GROUP BY product.id_product ORDER BY `total` DESC LIMIT 1
-
-
-
-
+23 - SELECT DISTINCT `buyer` FROM `purchase` 
+24 - SELECT DISTINCT product.PName FROM `purchase`,`product` WHERE purchase.product = product.id_product AND purchase.date >= '2003-01-01'
+25 - SELECT DISTINCT company.CName FROM `purchase`,product,company WHERE purchase.product = product.id_product AND product.Manufacturer = company.id_company AND
+purchase.payment_method='Credit card'
 
 
 

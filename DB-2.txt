@@ -1,0 +1,37 @@
+1 - SELECT COUNT(*) as `total` from game
+
+2 - SELECT * FROM `game` WHERE `game_name` LIKE '%war%'
+
+3 - SELECT COUNT(*) AS `total` FROM `genre` 
+
+4 - SELECT COUNT(*), gr.genre_name FROM `game` g , genre gr WHERE g.genre_id = gr.id GROUP BY g.genre_id
+
+5 - SELECT publisher.publisher_name, game.game_name FROM `game_publisher`, game, publisher WHERE game_publisher.game_id = game.id AND game_publisher.publisher_id = publisher.id AND game.game_name = '007: Quantum of Solace'
+
+6 - SELECT publisher.publisher_name, game.game_name FROM `game_publisher`, game, publisher WHERE game_publisher.game_id = game.id AND game_publisher.publisher_id = publisher.id AND publisher.publisher_name = 'Nintendo'
+
+7 - SELECT * FROM `game_publisher`, game, publisher, genre WHERE game_publisher.game_id = game.id AND 
+game_publisher.publisher_id = publisher.id AND
+game.genre_id = genre.id AND
+
+genre.genre_name = 'Action' AND
+publisher.publisher_name = 'Agetec'
+
+8 - SELECT game.game_name FROM `game_platform` , game_publisher , game, platform WHERE game_platform.game_publisher_id = game_publisher.id AND game_publisher.game_id = game.id AND game_platform.platform_id = platform.id AND platform.platform_name = 'PS2'
+
+9 - SELECT game.game_name, publisher.publisher_name FROM `game_publisher`, publisher , game WHERE
+
+game_publisher.publisher_id = publisher.id AND
+game_publisher.game_id = game.id
+
+
+10 - SELECT game.game_name FROM `game_platform`, game_publisher, game, platform WHERE game_platform.game_publisher_id = game_publisher.id AND game_publisher.game_id = game.id AND game_platform.platform_id = platform.id AND game_platform.release_year > 2007 AND platform.platform_name = 'Wii'
+
+11 - SELECT SUM(`num_sales`) AS `total` FROM `region_sales`
+
+12 - SELECT SUM(num_sales) AS `total` FROM `region_sales`,region WHERE region_sales.region_id = region.id AND region.region_name = 'Europe'
+
+13 - SELECT SUM(`num_sales`) AS `total` FROM `region_sales`, game_platform, region, platform WHERE region_sales.game_platform_id = game_platform.id AND region_sales.region_id = region.id AND region.region_name = 'Europe' AND game_platform.platform_id = platform.id AND platform.platform_name = 'Ps2'
+
+
+14 - 
